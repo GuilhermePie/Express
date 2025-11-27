@@ -2,6 +2,8 @@ import {express} from 'express';
 import {pkg} from "body-parser";
 import {router} from "./routes/router.js"
 
+import cors from "cors"
+
 import sequelize from './utils/database.js';
 import association  from './models/Associations.js';
 
@@ -25,3 +27,4 @@ app.use(urlencoded({extended:true}))
 
 
 app.use("/", router)
+app.use(cors())
